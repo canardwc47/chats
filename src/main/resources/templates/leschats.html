@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html  xmlns:th="http://www.thymeleaf.org" lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Liste de chats</title>
+    <link rel="stylesheet" data-th-href="@{/css/leschats.css}">
+</head>
+<body>
+
+<div class="cadre">
+    <h1>Bienvenue</h1>
+    <form method="get" data-th-action="@{/chats/detail}">
+        <label for="selectChat">Chats :</label>
+        <select name="idChat" id="selectChat">
+            <option data-th-each="c : ${chats}" data-th-text="${c.nom} " data-th-value="${c.idChat}"></option>
+    </select>
+        <button type="submit" >Voir ma belle tête</button>
+    </form>
+
+    <li><a method="post" href="/chats/creer">Création</a></li>
+
+</div>
+</body>
+</html>

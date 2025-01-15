@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Un chat</title>
+  <link rel="stylesheet" data-th-href="@{/css/unchat.css}">
+</head>
+<body>
+
+<div class="cadre">
+    <p data-th-if="${chat != null}" data-th-text="'Je suis  ' + ${chat.nom}"></p>
+    <p data-th-if="${chat != null}" data-th-text="'J\' ai une fourrure de couleur : ' + ${chat.couleur}"></p>
+    <p data-th-if="${chat != null}" data-th-text="'Je pèse ' + ${chat.poids} +' Kg'"></p>
+
+</div>
+
+</body>
+</html>

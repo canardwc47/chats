@@ -1,0 +1,71 @@
+/* Style général pour le conteneur */
+body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+body {
+    display: flex;
+    justify-content: center; /* Centrer horizontalement */
+    align-items: center;    /* Centrer verticalement */
+    background-image: url('./images/chat.webp');
+    background-color: #eaf0f6; /* Optionnel : couleur de fond */
+    min-height: 100vh;
+}
+
+/* Style du cadre */
+.cadre {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 20px;
+    padding: 20px;
+    border: 2px solid #2c3e50;
+    border-radius: 10px; /* Coins arrondis */
+    background-color: #f9f9f9;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 450px; /* Largeur du cadre */
+    height: 450px; /* Hauteur du cadre */
+}
+
+/* Style pour le label */
+label {
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+/* Style pour le select */
+#chat-creer {
+    width: 200px; /* Largeur personnalisée */
+    height: 40px; /* Hauteur personnalisée */
+    font-size: 14px; /* Taille de la police */
+    border: 2px solid #3498db; /* Couleur de la bordure */
+    border-radius: 5px; /* Coins arrondis */
+    background-color: #ecf0f1; /* Couleur de fond */
+    color: #2c3e50; /* Couleur du texte */
+    padding: 5px;
+    outline: none; /* Retirer la bordure bleue par défaut */
+    cursor: pointer;
+    transition: all 0.3s ease; /* Animation sur hover */
+}
+
+/* Style au survol */
+#chat-creer:hover {
+    background-color: #d1e7ff; /* Fond au survol */
+    border-color: #007bff; /* Changement de bordure au survol */
+}
+
+/* Style lorsque le select est actif (focus) */
+#chat-creer:focus {
+    border-color: #0056b3; /* Couleur de la bordure au focus */
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5); /* Ombre au focus */
+}
+
+/* Style pour les options */
+#chat-creer option {
+    font-size: 14px;
+    padding: 5px;
+}

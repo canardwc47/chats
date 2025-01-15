@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form data-th-object="${chat}" method="post">
+  <h1>Créer ton chat</h1>
+  <ul class="flex-outer">
+    <li>
+      <label for="inputNom">Nom : </label>
+      <input type="text" id="inputNom" required data-th-field="*{nom}" />
+    </li>
+    <li>
+      <label for="inputCouleur">Couleur : </label>
+      <input type="text" id="inputCouleur" required data-th-field="*{couleur}" />
+    </li>
+
+
+    <li>
+      <label for="inputPoids">Poids : </label>
+      <input type="number" id="inputPoids" required data-th-field="*{poids}" />
+    </li>
+    <li>
+      <button type="submit">Enregistrer</button>
+    </li>
+
+  </ul>
+</form>
+</body>
+</html>
