@@ -25,6 +25,7 @@ public class ChatDAOBouchon implements ChatDAO {
 
     @Override
     public void create(Chat chat) {
+        chat.setIdChat(lstChat.size()+1);
         lstChat.add(chat);
 
     }

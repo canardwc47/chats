@@ -13,4 +13,8 @@ public interface ChatService {
 
     void addChat(Chat chat);
 
+    void removeChat(int idChat);
+
+    void updateChat(Chat chat);
+
 }

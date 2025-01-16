@@ -9,7 +9,7 @@
 
 <div class="cadre">
     <h1>Bienvenue</h1>
-    <form method="get" data-th-action="@{/chats/detail}">
+    <form method="get" data-th-action="@{/chats/detail}" >
         <label for="selectChat">Chats :</label>
         <select name="idChat" id="selectChat">
             <option data-th-each="c : ${chats}" data-th-text="${c.nom} " data-th-value="${c.idChat}"></option>
@@ -18,6 +18,8 @@
     </form>
 
     <li><a method="post" href="/chats/creer">Création</a></li>
+    <li><a method="post" href="/chats/modif">Modification</a></li>
+<!--    <li><a method="post" href="/chats/creer">Supprimer</a></li>-->
 
 </div>
 </body>

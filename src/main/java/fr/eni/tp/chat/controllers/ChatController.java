@@ -46,13 +46,25 @@ public class ChatController {
     }
 
     @PostMapping("/creer")
-    public String saveNewFormateur(@ModelAttribute Chat chat, @RequestParam(name = "idChat")Model model) {
-
-        System.out.println(chat);
+    public String saveNewChat(@ModelAttribute Chat chat) {
 
         chatService.addChat(chat);
-
+        System.out.println(chat);
         return "view-chat-create";
+    }
+
+    @GetMapping("/modif")
+    public String updateChat(Model model) {
+        model.addAttribute("chat", new Chat());
+        return "view-chat-update";
+    }
+
+    @PostMapping("/modif")
+    public String saveUpdateChat(@ModelAttribute Chat chat) {
+
+        chatService.addChat(chat);
+        System.out.println(chat);
+        return "view-chat-update";
     }
 
 }

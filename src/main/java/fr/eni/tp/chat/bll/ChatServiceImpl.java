@@ -31,4 +31,15 @@ public class ChatServiceImpl implements ChatService {
         }
 
     }
+
+    @Override
+    public void removeChat(int idChat) {
+        chatDAO.delete(idChat);
+    }
+
+    @Override
+    public void updateChat(Chat chat) {
+        chatDAO.update(chat);
+
+    }
 }
