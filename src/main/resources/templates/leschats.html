@@ -25,8 +25,15 @@
         <button type="submit" >Modif ma belle tête</button>
     </form>
 
-    <li><a method="post" href="/chats/creer">Création</a></li>
-    <li><a method="post" href="/chats/modif">Modification</a></li>
+    <form method="get" data-th-action="@{/chats/delete}" >
+        <label for="selectChatModif">Chats :</label>
+        <select name="idChat" id="selectDelete">
+            <option data-th-each="c : ${chats}" data-th-text="${c.nom} " data-th-value="${c.idChat}"></option>
+        </select>
+        <button type="submit" >Tue moi</button>
+    </form>
+
+    <li><a method="post" href="/chats/creer">Créer ton chat</a></li>
 <!--    <li><a method="post" href="/chats/creer">Supprimer</a></li>-->
 
 </div>
