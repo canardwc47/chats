@@ -48,6 +48,7 @@ public class ChatDAOBouchon implements ChatDAO {
         if (item != null) {
             item.setNom(chat.getNom());
             item.setCouleur(chat.getCouleur());
+            item.setPoids(chat.getPoids());
         }
 
     }

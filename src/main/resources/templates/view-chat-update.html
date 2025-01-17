@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html  xmlns:th="http://www.thymeleaf.org" lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div class="cadre">
+
+  <form data-th-object="${chat}" data-th-fragment="filmform(readonly)" method="post">
+    <h1>Détail du film</h1>
+    <ul class="flex-outer">
+      <li>
+        <label for="inputGenre">Chat : </label>
+        <input type="text" id="inputGenre" data-th-disabled="${readonly}" data-th-field="*{nom}"/>
+      </li>
+      <li>
+        <label for="inputYear">Couleur : </label>
+        <input type="text" id="inputYear" data-th-disabled="${readonly}" data-th-field="*{couleur}"/>
+      </li>
+      <li><label for="inputTitle">Poids : </label> <input type="text"
+                                                          id="inputTitle" data-th-disabled="${readonly}" data-th-field="*{poids}"/>
+      </li>
+      <button type="submit" >Modif ma belle tête</button>
+    </ul>
+  </form>
+</div>
+</body>
+</html>

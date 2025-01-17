@@ -13,6 +13,7 @@ import java.util.List;
 @Controller
 
 @RequestMapping("/chats")
+
 public class ChatController {
 
     private ChatService chatService;
@@ -46,25 +47,25 @@ public class ChatController {
     }
 
     @PostMapping("/creer")
-    public String saveNewChat(@ModelAttribute Chat chat) {
+    public String saveNewChat(@ModelAttribute Chat chat , Model model) {
 
         chatService.addChat(chat);
+        model.addAttribute("chats",chatService.trouverChats());
         System.out.println(chat);
-        return "view-chat-create";
+        return "leschats";
     }
 
     @GetMapping("/modif")
-    public String updateChat(Model model) {
-        model.addAttribute("chat", new Chat());
+    public String updateChat(@RequestParam(name = "idChat") int idChat,Model model) {
+        model.addAttribute("chat", chatService.trouverChat(idChat));
         return "view-chat-update";
     }
 
     @PostMapping("/modif")
     public String saveUpdateChat(@ModelAttribute Chat chat) {
 
-        chatService.addChat(chat);
+        chatService.updateChat(chat);
         System.out.println(chat);
-        return "view-chat-update";
+        return "redirect:/chats";
     }
-
 }
