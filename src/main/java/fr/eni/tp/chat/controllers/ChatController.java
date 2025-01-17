@@ -68,4 +68,17 @@ public class ChatController {
         System.out.println(chat);
         return "redirect:/chats";
     }
+    @GetMapping("/delete")
+    public String deleteChat(@RequestParam(name = "idChat") int idChat,Model model) {
+        chatService.removeChat(idChat);
+        return "redirect:/chats";
+    }
+
+    @PostMapping("/delete")
+    public String saveDeleteChat(@ModelAttribute Chat chat) {
+
+        chatService.updateChat(chat);
+        System.out.println(chat);
+        return "redirect:/chats";
+    }
 }
